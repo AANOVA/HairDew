@@ -93,7 +93,6 @@ public class BuildProductActivity extends AppCompatActivity {
 
         events();
 
-
     }
 
     private void events(){

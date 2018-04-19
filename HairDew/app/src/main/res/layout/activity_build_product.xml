@@ -55,7 +55,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:text="Total: XX.XX"
+                    android:text="Total: $0.0"
                     android:layout_alignParentRight="true"
                     />
             </RelativeLayout>
