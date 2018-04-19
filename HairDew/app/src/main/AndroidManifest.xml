@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainLogin"></activity>
+        <activity android:name=".CreateActivity"></activity>
+        <activity android:name=".ExploreActivity"></activity>
+        <activity android:name=".FAQActivity"></activity>
+        <activity android:name=".BuildProductActivity"></activity>
+
     </application>
 
 </manifest>

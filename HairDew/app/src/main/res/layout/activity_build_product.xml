@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/linear_image_banner"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_info_section_1"
+                android:fontFamily="cursive"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/choose_base_activity_image_1"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/linear_image_banner"
+            android:id="@+id/list_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="fill"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/step1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/order_sum"
+                    android:textColor="@color/accentuate" />
+                <TextView
+                    android:id="@+id/order_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Total: XX.XX"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/raw_shea_butter"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/baseCheckBox1"
+                    android:layout_centerVertical="true"
+                    android:onClick="displayOrderSum"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/raw_shea_butterPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <CheckBox
+                    android:id="@+id/white_Shea_Butter"
+                    android:layout_margin="10dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/baseCheckBox2"/>
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/white_shea_butterPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="right"
+                    android:padding="16dp"
+                    android:text="XX.XX"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step2"
+                android:textColor="@color/accentuate"
+                android:layout_margin="25dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/jojoba_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oilCheckBox1"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/jojoba_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/coconut_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oilCheckBox2"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/coconut_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/grapeseed_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oilCheckBox3"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/grapeseed_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/jamaican_black_castor_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oilCheckBox4"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/jamaican_black_castor_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step3"
+                android:textColor="@color/accentuate"
+                android:layout_margin="25dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/rose_water"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/infusionOptions1"/>
+
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/rose_waterPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_alignParentRight="true"
+                android:text="XX.XX"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <CheckBox
+
+                android:id="@+id/vanilla"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/infusionOptions2"/>
+
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/vanillaPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_alignParentRight="true"
+                android:text="XX.XX"/>
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/lavender_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infusionOptions3"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/lavender_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/peppermint_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infusionOptions4"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/peppermint_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/teatree_oil"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/infusionOptions5"/>
+
+                <TextView
+                    android:layout_gravity="right"
+                    android:id="@+id/teatree_oilPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_alignParentRight="true"
+                    android:text="XX.XX"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/create_order_summary_button"
+            android:layout_below="@id/list_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:background="@color/accentuate"
+           />
+    </LinearLayout>
+</ScrollView>

@@ -1,19 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="studios.fyhrf.hairdew.MainActivity">
+    tools:context="studios.fyhrf.hairdew.MainActivity"
+    android:background="@color/colorPrimary">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/banner_TextView"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/header"
+                android:textColor="@color/white"
+                android:fontFamily="cursive"
+                android:background="@color/colorPrimary"
+                />
+            <SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Search Here"
+                android:layout_below="@id/banner_TextView"
+                android:onClick="searchViewLogic"
+                />
+            <LinearLayout
+                android:id="@+id/linear_image_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_below="@id/search_bar"
+                android:background="@color/colorPrimary">
+
+
+                <ImageView
+                    android:id="@+id/scrollView_Image_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/linearview_image_1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/linear_image_banner"
+                android:id="@+id/linear_button_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/accentuate">
+                <Button
+                    android:id="@+id/button_Create"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:text="@string/buttonCreate"
+                    />
+                <Button
+                    android:id="@+id/button_Explore"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:text="@string/buttonExplore"
+                   />
+                <Button
+                    android:id="@+id/button_FAQ"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:text="@string/buttonFAQ"
+                  />
+
+            </LinearLayout>
+            <TextView
+                android:layout_below="@id/linear_button_banner"
+                android:id="@+id/app_info_section_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_info_section_1"
+                android:textColor="@color/white"
+                android:fontFamily="cursive"
+                android:background="@color/colorPrimary"
+                android:textAlignment="center"/>
+
+
+
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

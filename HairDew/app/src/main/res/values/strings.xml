@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">HairDew</string>
+    //Strings for activity_login
+    <string name="header">Go Back to Nature, Back to Natural</string>
+    <string name="app_info_section_1">When caring for your precious coils, you deserve the best.</string>
+    <string name="buttonCreate">Create</string>
+    <string name="buttonExplore">Explore</string>
+    <string name="buttonFAQ">FAQ</string>
+    //Strings for activity_create
+    <string name="headerCreate">We\'re All Mad Here</string>
+    <string name="chooseBase">Choose Your Base</string>
+    <string name="chooseOil">Choose Your Oil</string>
+    <string name="chooseScent">Choose Your Scent</string>
+    <string name="chooseBaseMoreInfo">"This is the nourishing foundation for your creation."</string>
+    <string name="startCreatingButton">Create</string>
+    //Strings for activity_build_product
+    <string name="step1">Step 1: Nourishing Foundation</string>
+    <string name="step2">Step 2: Nourishing Oil </string>
+    <string name="step3">Step 3: Essential Infusion</string>
+    <string name="baseCheckBox1">Raw Shea Butter</string>
+    <string name="baseCheckBox2">White Shea Butter</string>
+    <string name="oilCheckBox1">Jojoba Oil</string>
+    <string name="oilCheckBox2">Coconut Oil</string>
+    <string name="oilCheckBox3">GrapeSeed Oil</string>
+    <string name="oilCheckBox4">Jamaican Black Castor Oil</string>
+    <string name="infusionOptions1">Rose Water</string>
+    <string name="infusionOptions2">Vanilla</string>
+    <string name="infusionOptions3">Lavender Oil</string>
+    <string name="infusionOptions4">Peppermint Oil</string>
+    <string name="infusionOptions5">Tea Tree Oil</string>
+    //Strings for activity_submit
+    <string name="title">Order Summary</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+
