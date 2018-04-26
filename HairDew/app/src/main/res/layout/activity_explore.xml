@@ -7,20 +7,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/choose_your_scent"
-            />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:fontFamily="cursive"
             android:textAlignment="center"
-            android:text="See What Other Naturals are Crafting in Their Gardens"
+            android:text="See What Other Naturals are Crafting"
             android:textSize="30sp"/>
+
+
+
+
     </RelativeLayout>
 
 </ScrollView>

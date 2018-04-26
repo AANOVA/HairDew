@@ -21,6 +21,10 @@
         <activity android:name=".ExploreActivity"></activity>
         <activity android:name=".FAQActivity"></activity>
         <activity android:name=".BuildProductActivity"></activity>
+        <activity android:name=".SubmitActivity"></activity>
+        <activity android:name=".ChooseBaseInfoActivity"></activity>
+        <activity android:name=".ChooseOilInfoActivity"></activity>
+        <activity android:name=".ChooseScentInfoActivity"></activity>
 
     </application>
 

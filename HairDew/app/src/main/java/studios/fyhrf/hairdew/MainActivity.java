@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Create = findViewById(R.id.button_Create);
         Explore =  findViewById(R.id.button_Explore);
         FAQ = findViewById(R.id.button_FAQ);
+
     }
 
     private void events(){
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
     //This Method Loads the Apps Home page when user clicks on LogIn Button
     public void goToMainLogin(View view){

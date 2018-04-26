@@ -6,32 +6,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-           android:orientation="horizontal"
-            android:id="@+id/create_header_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/headerCreate"
-                android:textSize="50sp"
-                android:textColor="@color/white"
-                android:fontFamily="cursive"
-                />
-        </LinearLayout>
+
+
         <LinearLayout
             android:id="@+id/create_header_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/create_header_text">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bloom_search_bar"
-            android:scaleType="centerCrop"/>
+            android:layout_height="wrap_content">
+
         </LinearLayout>
             <LinearLayout
                 android:layout_below="@id/create_header_image"
@@ -48,7 +29,10 @@
                 android:textSize="@android:dimen/app_icon_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/chooseBase"/>
+                android:text="@string/chooseBase"
+                android:clickable="true"
+                android:onClick="chooseYourBase"
+                />
 
             <TextView
                 android:id="@+id/chooseOil_text_view"
@@ -58,7 +42,9 @@
                 android:textSize="@android:dimen/app_icon_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/chooseOil"/>
+                android:text="@string/chooseOil"
+                android:clickable="true"
+                android:onClick="chooseYourOil"/>
 
             <TextView
                 android:id="@+id/chooseScent_text_view"
@@ -68,7 +54,9 @@
                 android:textSize="@android:dimen/app_icon_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/chooseScent"/>
+                android:text="@string/chooseScent"
+                android:clickable="true"
+                android:onClick="chooseYourScent"/>
                 <Button
                     android:id="@+id/button_begin_build"
                     android:layout_width="match_parent"

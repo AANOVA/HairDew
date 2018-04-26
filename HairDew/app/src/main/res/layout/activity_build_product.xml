@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/baseCheckBox1"
                     android:layout_centerVertical="true"
-                    android:onClick="displayOrderSum"/>
+                    />
 
                 <TextView
                     android:layout_gravity="right"

@@ -6,6 +6,17 @@
     <string name="buttonCreate">Create</string>
     <string name="buttonExplore">Explore</string>
     <string name="buttonFAQ">FAQ</string>
+    //Strings for FAQ
+    <string name="Question1Q">How Does It Work?</string>
+    <string name="Question1A">Hair Dew is an application that allows you to create organic hair products with just the click of a few buttons. By clicking on the Create tab you are taken to a page that explores the different steps of making your own product. At the bottom of this page you click, once again, on the Create button and can begin the process of choosing what goes into your very own product. Ideally you would choose a base, an oil, and perhaps a scent. But feel free to mix and match as you please. You\'re the creator and this is your lab. </string>
+    <string name="Question2Q">Can I Purchase Products Individually Or Must I Follow All The Steps? </string>
+    <string name="Question2A">We do sell products individually. Go to the Create page where you begin to build your own product and at the top there is the option of purchasing products individually. </string>
+    <string name="Question3Q">Are Refunds Available?</string>
+    <string name="Question3A">We would hate to hear that you are not satisfied with your creation and we provide a place for feedback however, we do not accept returns nor do we make refunds.</string>
+    <string name="Question4Q">Who Owns Hair Dew?</string>
+    <string name="Question4A">Hair Dew was founded by Jillian Johnson. You can read more about her here.</string>
+    <string name="Question5Q">I Don\'t See What I Want, Do You Take Personal Requests?</string>
+    <string name="Question5A">We love feedback and encourage requests and critics of many kinds. If you would like to order something we don\t have listed we will source it out for you. </string>
     //Strings for activity_create
     <string name="headerCreate">We\'re All Mad Here</string>
     <string name="chooseBase">Choose Your Base</string>

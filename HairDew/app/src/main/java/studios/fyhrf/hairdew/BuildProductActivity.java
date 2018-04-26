@@ -1,15 +1,20 @@
 package studios.fyhrf.hairdew;
 
+import android.app.UiAutomation;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by fyhrf on 3/24/2018.
@@ -17,6 +22,7 @@ import java.util.List;
 
 public class BuildProductActivity extends AppCompatActivity {
     static private float price;
+    Button submitOrderSumButton;
 
     public CheckBox rawSheaButter;
     public CheckBox whiteSheaButter;
@@ -53,8 +59,9 @@ public class BuildProductActivity extends AppCompatActivity {
     float fPeppermintOilCost = 3;
     float fTeaTreeOilCost = 3;
 
-    private List<CheckBox> checkBoxList;
-    private List<Float> prices;
+    public List<CheckBox> checkBoxList;
+    public boolean [] array = new boolean[10];
+    public List<Float> prices;
     private float total=0;
 
 
@@ -62,10 +69,12 @@ public class BuildProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_product);
+        //Array of check boxes
         checkBoxList = new ArrayList<>();
         checkBoxList.add((CheckBox)findViewById(R.id.raw_shea_butter));
         checkBoxList.add((CheckBox)findViewById(R.id.white_Shea_Butter));
         checkBoxList.add((CheckBox)findViewById(R.id.jojoba_oil));
+        checkBoxList.add((CheckBox)findViewById(R.id.coconut_oil));
         checkBoxList.add((CheckBox)findViewById(R.id.grapeseed_oil));
         checkBoxList.add((CheckBox)findViewById(R.id.jamaican_black_castor_oil));
         checkBoxList.add((CheckBox)findViewById(R.id.rose_water));
@@ -74,6 +83,48 @@ public class BuildProductActivity extends AppCompatActivity {
         checkBoxList.add((CheckBox)findViewById(R.id.peppermint_oil));
         checkBoxList.add((CheckBox)findViewById(R.id.teatree_oil));
 
+
+        rawSheaButter = findViewById(R.id.raw_shea_butter);
+        boolean yesRawShea = rawSheaButter.isChecked();
+
+        whiteSheaButter = findViewById(R.id.white_Shea_Butter);
+        boolean yesWShea = whiteSheaButter.isChecked();
+
+        jojobaOil = findViewById(R.id.jojoba_oil);
+        boolean yesJojo = jojobaOil.isChecked();
+
+        coconutOil = findViewById(R.id.coconut_oil);
+        boolean yesCoconut = coconutOil.isChecked();
+
+        grapeseedOil = findViewById(R.id.grapeseed_oil);
+        boolean yesGrapeSeed = grapeseedOil.isChecked();
+
+        jamaicanBlackCastorOil = findViewById(R.id.jamaican_black_castor_oil);
+        boolean yesJamaicanBCO = jamaicanBlackCastorOil.isChecked();
+
+        roseWater = findViewById(R.id.rose_water);
+        boolean yesRoseWater = roseWater.isChecked();
+
+        vanilla = findViewById(R.id.vanilla);
+        boolean yesVanilla = vanilla.isChecked();
+
+        lavenderOil = findViewById(R.id.lavender_oil);
+        boolean yesLavender = lavenderOil.isChecked();
+
+        peppermintOil = findViewById(R.id.peppermint_oil);
+        boolean yesPeppermint = peppermintOil.isChecked();
+
+        teaTreeOil = findViewById(R.id.teatree_oil);
+        boolean yesTeaTree = teaTreeOil.isChecked();
+
+        array[0]= yesRawShea;
+        array[1]= yesWShea;
+        array[3] = yesJojo;
+
+
+
+
+        //Array of product prices
         prices = new ArrayList<>();
         prices.add(fRawSheaButterCost);
         prices.add(fWhiteSheaButterCost);
@@ -86,16 +137,29 @@ public class BuildProductActivity extends AppCompatActivity {
         prices.add(fLavenderOilCost);
         prices.add(fPeppermintOilCost);
         prices.add(fTeaTreeOilCost);
+        UI();
 
         priceViews();
 
-        updateOrderSum();
-
         events();
 
+
+
+    }
+    public void UI(){
+        submitOrderSumButton = findViewById(R.id.create_order_summary_button);
+        submitOrderSumButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(BuildProductActivity.this, SubmitActivity.class);
+                intent.putExtra("storedChecks", array);
+                startActivity(intent);
+            }
+        });
     }
 
     private void events(){
+
         for (final CheckBox checkbox:checkBoxList) {
             checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -104,9 +168,11 @@ public class BuildProductActivity extends AppCompatActivity {
                 }
             });
         }
+
     }
 
     private void checkTotalPrice() {
+
         total=0;
         int position;
         for (final CheckBox checkbox:checkBoxList) {
@@ -121,51 +187,8 @@ public class BuildProductActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.order_sum)).setText("Total :$ "+total);
     }
 
-    //Method that displays the total cost of a purchase.
-    public float displayOrderSum(float sum) {
-        TextView orderSum = (TextView) findViewById(R.id.order_sum);
-        orderSum.setText(String.valueOf(sum));
-        return sum;
-        }
-    //This method updates the total price of a purchase
-    public float updatedPrice(float num){
-        float newNum = price + num;
-        displayOrderSum(newNum);
-
-        return newNum;
-
-    }
-
-    public void updateOrderSum() {
-        rawSheaButter = findViewById(R.id.raw_shea_butter);
-        rawSheaButter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean yesRawShea = rawSheaButter.isChecked();
-                if (yesRawShea) {
-
-                    updatedPrice(fRawSheaButterCost);
-                }else {
-
-                }
 
 
-            }
-        });
-        whiteSheaButter = findViewById(R.id.white_Shea_Butter);
-        whiteSheaButter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean yesWShea = whiteSheaButter.isChecked();
-                if (yesWShea) {
-                    //updatedPrice(fWhiteSheaButterCost);
-
-                }
-            }
-
-
-        });
-    }
 
 //This method displays the prices of the products
     public void priceViews (){
