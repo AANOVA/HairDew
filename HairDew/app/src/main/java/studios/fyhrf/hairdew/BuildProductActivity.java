@@ -1,6 +1,5 @@
 package studios.fyhrf.hairdew;
 
-import android.app.UiAutomation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +11,10 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import studios.fyhrf.hairdew.data.model.Product;
+import studios.fyhrf.hairdew.data.provider.ProductProvider;
 
 /**
  * Created by fyhrf on 3/24/2018.
@@ -63,12 +63,15 @@ public class BuildProductActivity extends AppCompatActivity {
     public boolean [] array = new boolean[10];
     public List<Float> prices;
     private float total=0;
+    private List<Product> products;
+    private ArrayList<Integer> selectedProducts;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_product);
+        setUpData();
         //Array of check boxes
         checkBoxList = new ArrayList<>();
         checkBoxList.add((CheckBox)findViewById(R.id.raw_shea_butter));
@@ -140,19 +143,29 @@ public class BuildProductActivity extends AppCompatActivity {
         UI();
 
         priceViews();
-
         events();
 
-
-
     }
+
+    private void setUpData() {
+       selectedProducts= new ArrayList<>();
+       ProductProvider.setUp();
+       products= ProductProvider.getProducts();
+    }
+
     public void UI(){
         submitOrderSumButton = findViewById(R.id.create_order_summary_button);
         submitOrderSumButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+
+                Log.v("CONSOLE", "selected products "+selectedProducts);
+
+                Bundle  bundle= new Bundle();
+                bundle.putIntegerArrayList("storedChecks",selectedProducts);
                 Intent intent = new Intent(BuildProductActivity.this, SubmitActivity.class);
-                intent.putExtra("storedChecks", array);
+                intent.putExtras(bundle);
+
                 startActivity(intent);
             }
         });
@@ -172,13 +185,16 @@ public class BuildProductActivity extends AppCompatActivity {
     }
 
     private void checkTotalPrice() {
-
+        Log.v("CONSOLE", "checkTotalPrice");
+        selectedProducts= new ArrayList<>();
         total=0;
         int position;
         for (final CheckBox checkbox:checkBoxList) {
             position=checkBoxList.indexOf(checkbox);
             if(checkbox.isChecked()){
-                total+=prices.get(position);
+                //total+=prices.get(position);
+                total+=products.get(position).getPrice();
+                selectedProducts.add(products.get(position).getId());
             }
         }
 
@@ -186,9 +202,6 @@ public class BuildProductActivity extends AppCompatActivity {
 
         ((TextView)findViewById(R.id.order_sum)).setText("Total :$ "+total);
     }
-
-
-
 
 //This method displays the prices of the products
     public void priceViews (){
@@ -238,10 +251,10 @@ public class BuildProductActivity extends AppCompatActivity {
 
 
         TextView rSTextView = (TextView) findViewById(R.id.raw_shea_butterPrice);
-        rSTextView.setText(ingredients1A.getPrice());
+        rSTextView.setText(products.get(0).tagPrice());//ingredients1A.getPrice());
 
         TextView wSTextView = (TextView) findViewById(R.id.white_shea_butterPrice);
-        wSTextView.setText(ingredients1B.getPrice());
+        wSTextView.setText(products.get(1).tagPrice());//ingredients1B.getPrice());
 
         TextView jojobaOilTextView = (TextView) findViewById(R.id.jojoba_oilPrice);
         jojobaOilTextView.setText(ingredients2A.getPrice());

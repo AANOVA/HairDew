@@ -13,7 +13,7 @@ import studios.fyhrf.hairdew.data.model.Product;
 
 public class ProductProvider {
 
-    private List<Product> products;
+    private static List<Product> products;
 
     /*
      String rawSheaButterCost = "$10";
@@ -29,22 +29,31 @@ public class ProductProvider {
     String teaTreeOilCost = "$3";
      */
 
-    public ProductProvider() {
+    public static void setUp() {
         products= new ArrayList<>();
-        products.add(new Product("Raw Shea Butter",10f,0));
-        products.add(new Product("White Shea Butter",8f,0));
-        products.add(new Product("Jojoba Oil",5f,0));
-        products.add(new Product("Coconut Oil",5f,0));
-        products.add(new Product("Grapeseed Oil",5f,0));
-        products.add(new Product("Jamaican Back Castor Oil",5f,0));
-        products.add(new Product("Rose Water",3f,0));
-        products.add(new Product("Vanilla",3f,0));
-        products.add(new Product("Lavender Oil",3f,0));
-        products.add(new Product("Tea Tree Oil",3f,0));
-        products.add(new Product("Peppermint Oil",3f,0));
+        products.add(new Product(100,"Raw Shea Butter",10f,0));
+        products.add(new Product(101,"White Shea Butter",8f,0));
+        products.add(new Product(102,"Jojoba Oil",5f,0));
+        products.add(new Product(103,"Coconut Oil",5f,0));
+        products.add(new Product(104,"Grapeseed Oil",5f,0));
+        products.add(new Product(105,"Jamaican Back Castor Oil",5f,0));
+        products.add(new Product(106,"Rose Water",3f,0));
+        products.add(new Product(107,"Vanilla",3f,0));
+        products.add(new Product(108,"Lavender Oil",3f,0));
+        products.add(new Product(109,"Tea Tree Oil",3f,0));
+        products.add(new Product(110,"Peppermint Oil",3f,0));
     }
 
-    public List<Product> getProducts() {
+    public  static List<Product> getProducts() {
         return products;
+    }
+
+    public static Product productById(int id){
+        for (Product product:products) {
+            if(product.getId()==id){
+                return product;
+            }
+        }
+        return null;
     }
 }

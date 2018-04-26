@@ -10,10 +10,18 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 
+    private int id;
     private String name;
     private boolean used ;
     private float price;
     private int section;
+
+    public Product(int id, String name, float price, int section) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.section = section;
+    }
 
     public Product(String name, float price, int section) {
         this.name = name;
@@ -51,5 +59,27 @@ public class Product implements Serializable {
 
     public void setSection(int section) {
         this.section = section;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String tagPrice(){
+        return "$"+price;
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", used=" + used +
+                ", price=" + price +
+                ", section=" + section +
+                '}';
     }
 }
