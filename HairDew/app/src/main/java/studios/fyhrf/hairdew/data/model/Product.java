@@ -9,17 +9,20 @@ import java.io.Serializable;
  */
 
 public class Product implements Serializable {
-
+    private int iD;
     private String name;
     private boolean used ;
     private float price;
     private int section;
 
-    public Product(String name, float price, int section) {
+    public Product(String name, float price, int section, int index) {
         this.name = name;
         this.price = price;
         this.section = section;
+        this.iD = index;
     }
+
+    public int getiD(){return  iD;}
 
     public String getName() {
         return name;

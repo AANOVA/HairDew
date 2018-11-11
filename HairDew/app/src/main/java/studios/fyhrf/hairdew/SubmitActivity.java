@@ -15,7 +15,8 @@ import java.util.List;
 
 public class SubmitActivity extends AppCompatActivity {
 
-
+public String productName;
+public float price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +25,17 @@ public class SubmitActivity extends AppCompatActivity {
 
 
         TextView storedChecks= findViewById(R.id.displayStoredChecks);
-        storedChecks.setText(array.toString());
+        storedChecks.setText();
 
 
+
+    }
+    public String orderSummaryMessage(String productName, String message, float price ){
+        message = "Order Summary:";
+        message+= "\nProduct(s): " + productName;
+        message+= "\nTotal: $" +price;
+        String orderSummary = message + "\nThank You!!!";
+        return orderSummary;
 
     }
 
